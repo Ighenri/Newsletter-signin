@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <title>Submit</title>
 </head>
-<body>
-   <div>
-        <header>
+<body class="sm:grid sm:place-items-center">
+   <div class="grid place-items-center h-screen w-[90%] mx-auto sm:flex flex-col justify-center items-center sm:w-[50%] lg:w-[40%]">
+        <header class="flex flex-col justify-center">
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64">
                     <defs>
                         <linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%">
                             <stop offset="0%" stop-color="#FF6A3A" />
@@ -22,15 +25,16 @@
                     </g>
                 </svg>
             </div>
-            <h1>Thanks for subscribing!</h1>
-            <p>
-                A confirmation email has been sent to ash@loremcompany.com.
+            <h1 class="text-3xl sm:text-4xl font-bold w-[60%] my-4">Thanks for subscribing!</h1>
+            <p class="text-sm">
+                A confirmation email has been sent to  <span class="font-bold"> ash@loremcompany.com</span>.
                 Please open it and click the button inside to confirm your subscription.
             </p>
         </header>
-    <footer>
-        <p>Dismiss message</p>
-    </footer>
+        <footer class="bg-DarkSlateGrey text-White p-3 w-full text-center rounded-md text-sm sm:bg-Tomato sm:my-8  sm:shadow-Tomato shadow-lg cursor-pointer">
+            <p>Dismiss message</p>
+        </footer>
    </div>
+   <script src="main.js"></script>
 </body>
 </html>
