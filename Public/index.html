@@ -16,11 +16,11 @@
   </style>
 </head>
 
-
+<!-- REVERSE THE HERO IMAGE ON TABLET VIEW -->
 <body class="grid grid-cols-1">
-  <div>
-    <header>
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="284"
+  <div class="sm:[width:90%] sm:mx-auto grid sm:grid sm:grid-cols-2 sm:grid-row-reverse lg:flex flex-row-reverse items-center sm:justify-center h-screen">
+    <header class=" sm:ml-8">
+      <svg class="w-full sm:h-screen" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="284"
         viewBox="0 0 375 284">
         <defs>
           <linearGradient id="b" x1="100%" x2="0%" y1="21.322%" y2="78.678%">
@@ -149,56 +149,59 @@
         </g>
       </svg>
     </header>
-    <main>
-      <h1 class="font-bold">Stay updated</h1>
-      <p>
+
+    <!-- BODY -->
+    <main class="[width:90%] mx-auto">
+      <h1 class="font-bold text-2xl mb-4">Stay updated!</h1>
+      <p class="text-sm mb-4">
         Join 60,000+ product managers receiving monthly updates on:
       </p>
       
       <div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+        <div class="flex items-center text-sm">
+          <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21">
             <g fill="none">
               <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
               <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
             </g>
           </svg>
+          <p>
+            Product discovery and building what matters
+          </p>
         </div>
-        <div>
-          Product discovery and building what matters
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+        <div class="flex items-center text-sm leading-8">
+          <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21">
             <g fill="none">
               <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
               <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
             </g>
           </svg>
+          <p>
+            Measuring to ensure updates are a success
+          </p>
         </div>
-        <div>
-          Measuring to ensure updates are a success
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+
+        <div class="flex items-center text-sm leading-8">
+          <svg class="mr-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 21 21">
             <g fill="none">
               <circle cx="10.5" cy="10.5" r="10.5" fill="#FF6155" />
               <path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8" />
             </g>
           </svg>
+          <p>
+            And much more!
+          </p>
         </div>
-        <div>
-          And much more!
-        </div>
       </div>
-      <div>
-        <p>Email address</p>
-        <input type="email" name="email" id="email" placeholder="email@company.com">
+
+      <!-- Email section -->
+      <div class="mt-4">
+        <p class="text-sm  mb-2 text-DarkSlateGrey">Email address</p>
+        <input type="email" name="email" id="email" placeholder="email@company.com" class="outline-none border-2 border-Grey rounded-md pl-4 text-sm p-2 w-full">
       </div>
-      <div>
-        <p>
-          Subscribe to monthly newsletter
-        </p>
-      </div>
+      <p class="bg-DarkSlateGrey text-center text-White py-2 rounded-md mt-4 text-sm mb-3">
+        Subscribe to monthly newsletter
+      </p>
     </main>
   </div>
   
