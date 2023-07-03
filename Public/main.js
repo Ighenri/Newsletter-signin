@@ -1,15 +1,81 @@
-const email =document.forms["myForm"]["email"].value;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const form = document.querySelector(".myForm");
+const email = document.getElementById("email");
+const body =document.querySelector(".body");
 
-function validateForm() {
-  if (email === "") {
-    alert("Email must be filled out");
-    return false;
-  }
-  if (!emailRegex.test(email)) {
-    alert("Invalid email format");
-    return false;
-  }
-
-  return true;
+const isValidEmail = (email) => {
+  const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  return re.test(String(email).toLowerCase());
 }
+
+
+
+form.addEventListener("submit", (e) => {
+  const emailValue = email.value.trim(); // remove white spaces
+  if (emailValue === ""){
+    alert("Email is required");
+     e.preventDefault(); // prevents the form from being submitted by defualt
+  } else if(!isValidEmail(emailValue)) {
+    alert("Invalid email format");
+     e.preventDefault(); // prevents the form from being submitted by defualt
+  } else{
+    body.innerHTML = ` <div class="sm:place-items-center  successMessage">
+      <div class="grid place-items-center h-screen w-[90%] mx-auto sm:flex flex-col justify-center items-center sm:w-[50%] lg:w-[40%]">
+            <header class="flex flex-col justify-center">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64">
+                        <defs>
+                            <linearGradient id="a" x1="100%" x2="0%" y1="0%" y2="100%">
+                                <stop offset="0%" stop-color="#FF6A3A" />
+                                <stop offset="100%" stop-color="#FF527B" />
+                            </linearGradient>
+                        </defs>
+                        <g fill="none">
+                            <circle cx="32" cy="32" r="32" fill="url(#a)" />
+                            <path stroke="#FFF" stroke-width="4" d="m18.286 34.686 8.334 7.98 19.094-18.285" />
+                        </g>
+                    </svg>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-bold w-[60%] my-4">Thanks for subscribing!</h1>
+                <p class="text-sm">
+                    A confirmation email has been sent to  <span class="font-bold">${emailValue}</span>.
+                    Please open it and click the button inside to confirm your subscription.
+                </p>
+            </header>
+            <footer class="bg-DarkSlateGrey text-White p-3 w-full text-center rounded-md text-sm sm:bg-Tomato sm:my-8  sm:shadow-Tomato shadow-lg cursor-pointer">
+                <p onclick="location.reload()">Dismiss message</p>
+            </footer>
+      </div>
+  </div>`
+  }
+
+});
+
+
+
+
+
+
+// function validateForm() {
+//   let email =document.forms["myForm"]["email"].value;
+//   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+//   if (email === "") {
+//     alert("Email must be filled out");
+//     return false;
+//   }
+//   if (!emailRegex.test(email)) {
+//     alert("Invalid email format");
+//     return false;
+//   }
+
+//   showSuccessMessage();
+//   return true;
+// }
+
+
+// function showSuccessMessage() {
+//   let inputSection = document.querySelector("inputSection");
+//   let successMessage = document.querySelector("successMessage");
+//   inputSection.style.display = "none";
+//   successMessage.style.display = "block";
+// }
